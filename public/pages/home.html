@@ -11,7 +11,7 @@
                     <input type="name" class="form-control" id="name" placeholder="Enter text" ng-model='form.text'>
                 </div>
                 
-                <button type="button" class="btn btn-default" ng-click="btnsubmit()">Submit</button>
+                <button type="button" class="btn btn-default" ng-click="btnsubmit()" ng-if='!loader'>Submit</button>
                 <br/>
                 <br/>
                 <div style="min-height: 30px;text-align: center;" ng-if="form.isShow" id="errorMsg"> 

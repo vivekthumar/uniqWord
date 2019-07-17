@@ -1,12 +1,13 @@
-angular.module('imageGallery').controller('aplhalistController', function($scope, $http,) {
+angular.module('imageGallery').controller('aplhalistController', function($http, $rootScope) {
 	angular.element(".progress-indicator").show();
 	$('#example').dataTable().fnDestroy();
-	
-    $.ajax({
+		$rootScope.loader = true;
+    $http({
 	    'url': "/record?type=alpha",
 	    'method': "GET",
 	    'contentType': 'application/json'
-	}).done( function(data) {
+	}).success( function(data) {
+		$rootScope.loader = false;
 	    $('#example').dataTable( {
 	    	"bDestroy": true,
 	        "aaData": data.data,
@@ -16,6 +17,7 @@ angular.module('imageGallery').controller('aplhalistController', function($scope
 	        ]
 	    })
 	}).error(function(err){
+		$rootScope.loader = false;
 		alert(err.responseJSON.msg)
 	})
 });
