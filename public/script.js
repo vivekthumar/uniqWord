@@ -9,6 +9,10 @@ scotchApp.config(function($routeProvider,$locationProvider) {
             templateUrl : 'pages/list.html',
             controller  : 'listController'
         })
+        .when('/alphalist', {
+            templateUrl : 'pages/alpha.html',
+            controller  : 'aplhalistController'
+        })
         .otherwise({
             templateUrl : 'pages/home.html',
             controller  : 'homeController'

@@ -7,7 +7,8 @@ const constants = {
 
     },
     collections: {
-        text: 'text'
+        text: 'text',
+        alpha: 'alpha'
     },
 };
 

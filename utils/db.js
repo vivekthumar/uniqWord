@@ -98,7 +98,8 @@ const _delete = function (selector, collectionName) {
     }
     return deffered.promise;
 };
-//_delete({},'text')
+// _delete({},'alpha')
+// _delete({},'text')
 const _update = function (selector,set, collectionName) {
     const deffered = q.defer();
     function innerQuery(){
